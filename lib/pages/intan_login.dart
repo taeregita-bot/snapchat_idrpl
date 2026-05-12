@@ -1,15 +1,22 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:snapchat_idrpl/pages/rere_register.dart';
 
-class RereRegister extends StatefulWidget {
-  const RereRegister({super.key});
+class IntanLogin extends StatefulWidget {
+  const IntanLogin({super.key});
 
   @override
-  State<RereRegister> createState() => _RereRegisterState();
+  State<IntanLogin> createState() => _IntanLoginState();
 }
 
-class _RereRegisterState extends State<RereRegister> {
+class _IntanLoginState extends State<IntanLogin> {
+
+  @override
+
+
   TextEditingController _password = TextEditingController();
   TextEditingController _username = TextEditingController();
+  TextEditingController _nomer = TextEditingController();
 
   bool _isObscure = true;
   IconData _isObscureIcon = Icons.remove_red_eye;
@@ -101,9 +108,32 @@ class _RereRegisterState extends State<RereRegister> {
               controller: _password,
               keyboardType: TextInputType.text,
               obscureText: _isObscure,
-
               decoration: InputDecoration(
                 hintText: "Password",
+                alignLabelWithHint: true,
+                focusColor: Colors.yellowAccent,
+                fillColor: Colors.white70,
+                filled: true,
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                suffixIcon: IconButton(
+                  icon: Icon(_isObscureIcon),
+                  onPressed: () {
+                    setState(() {
+                      isObscureText();
+                    });
+                  },
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            TextField(
+              controller: _password,
+              keyboardType: TextInputType.text,
+              obscureText: _isObscure,
+              decoration: InputDecoration(
+                hintText: "Nomer",
                 alignLabelWithHint: true,
                 focusColor: Colors.yellowAccent,
                 fillColor: Colors.white70,
@@ -145,7 +175,22 @@ class _RereRegisterState extends State<RereRegister> {
                   );
                 }
               },
-              child: Text('Daftar', style: TextStyle(color: Colors.black)),
+              style: ButtonStyle(
+                maximumSize: WidgetStatePropertyAll(Size(size.width - 80, 50)),
+              ),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RereRegister()),
+                ),
+                child: Text(
+                  'Login',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
           ],
         ),

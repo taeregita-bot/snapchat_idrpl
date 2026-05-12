@@ -1,33 +1,16 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:snapchat_idrpl/rere_register.dart';
+import 'package:snapchat_idrpl/pages/intan_dashboard.dart';
 
-class Login extends StatefulWidget {
-  const Login({super.key});
+class RereRegister extends StatefulWidget {
+  const RereRegister({super.key});
 
   @override
-  State<Login> createState() => _LoginState();
+  State<RereRegister> createState() => _RereRegisterState();
 }
 
-class _LoginState extends State<Login> {
-  late Timer t;
-
-  @override
-  void initState() {
-    t = Timer.periodic(
-      const Duration(seconds: 5),
-          (timer) => Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => RereRegister()),
-      ),
-    );
-    super.initState();
-  }
-
+class _RereRegisterState extends State<RereRegister> {
   TextEditingController _password = TextEditingController();
   TextEditingController _username = TextEditingController();
-  TextEditingController _nomer = TextEditingController();
 
   bool _isObscure = true;
   IconData _isObscureIcon = Icons.remove_red_eye;
@@ -119,32 +102,9 @@ class _LoginState extends State<Login> {
               controller: _password,
               keyboardType: TextInputType.text,
               obscureText: _isObscure,
+
               decoration: InputDecoration(
                 hintText: "Password",
-                alignLabelWithHint: true,
-                focusColor: Colors.yellowAccent,
-                fillColor: Colors.white70,
-                filled: true,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                suffixIcon: IconButton(
-                  icon: Icon(_isObscureIcon),
-                  onPressed: () {
-                    setState(() {
-                      isObscureText();
-                    });
-                  },
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: _password,
-              keyboardType: TextInputType.text,
-              obscureText: _isObscure,
-              decoration: InputDecoration(
-                hintText: "Nomer",
                 alignLabelWithHint: true,
                 focusColor: Colors.yellowAccent,
                 fillColor: Colors.white70,
@@ -186,7 +146,22 @@ class _LoginState extends State<Login> {
                   );
                 }
               },
-              child: Text('Login', style: TextStyle(color: Colors.black)),
+              style: ButtonStyle(
+                maximumSize: WidgetStatePropertyAll(Size(size.width - 80, 50)),
+              ),
+              child: TextButton(
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => IntanDashboard()),
+                ),
+                child: Text(
+                  'Daftar',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
