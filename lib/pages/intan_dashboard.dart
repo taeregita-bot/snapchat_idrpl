@@ -38,11 +38,7 @@ class _IntanDashboardState extends State<IntanDashboard> {
             backgroundColor: Colors.white30,
             icon: Icon(r.value[2], color: Colors.grey, size: 32),
             label: r.value[1],
-            activeIcon: Icon(
-              r.value[2],
-              color: Colors.lightBlueAccent,
-              size: 42,
-            ),
+            activeIcon: Icon(r.value[2], color: Colors.orange, size: 42),
           );
         }).toList(),
       ),

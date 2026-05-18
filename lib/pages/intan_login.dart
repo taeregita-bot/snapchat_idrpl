@@ -10,10 +10,7 @@ class IntanLogin extends StatefulWidget {
 }
 
 class _IntanLoginState extends State<IntanLogin> {
-
   @override
-
-
   TextEditingController _password = TextEditingController();
   TextEditingController _username = TextEditingController();
   TextEditingController _nomer = TextEditingController();

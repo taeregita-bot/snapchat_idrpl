@@ -1,7 +1,6 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:snapchat_idrpl/login.dart';
+import 'package:snapchat_idrpl/pages/intan_login.dart';
 
 class RereSplashscreen extends StatefulWidget {
   const RereSplashscreen({super.key});
@@ -16,10 +15,10 @@ class _RereSplashscreenState extends State<RereSplashscreen> {
   @override
   void initState() {
     t = Timer.periodic(
-      const Duration(seconds: 3),
+      const Duration(seconds: 2),
           (timer) => Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => Login()),
+        MaterialPageRoute(builder: (context) => IntanLogin()),
       ),
     );
     super.initState();
@@ -37,4 +36,3 @@ class _RereSplashscreenState extends State<RereSplashscreen> {
     );
   }
 }
-

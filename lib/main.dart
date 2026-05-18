@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snapchat_idrpl/rere_splashscreen.dart';
+import 'package:snapchat_idrpl/pages/rere_splashscreen.dart';
 
 void main(){
   runApp(MyApp());

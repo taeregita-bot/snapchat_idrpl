@@ -23,7 +23,7 @@ class _RereRegisterState extends State<RereRegister> {
     } else {
       _isObscure = true;
       _isObscureIcon = Icons.remove_red_eye;
-    }
+    };
     debugPrint(_isObscure.toString());
   }
 
