@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:snapchat_idrpl/pages/intan_login.dart';
+import 'package:snapchat_idrpl/pages/auth/intan_login.dart';
 
 class RereSplashscreen extends StatefulWidget {
   const RereSplashscreen({super.key});
@@ -16,7 +16,7 @@ class _RereSplashscreenState extends State<RereSplashscreen> {
   void initState() {
     t = Timer.periodic(
       const Duration(seconds: 2),
-          (timer) => Navigator.pushReplacement(
+      (timer) => Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => IntanLogin()),
       ),
@@ -26,7 +26,7 @@ class _RereSplashscreenState extends State<RereSplashscreen> {
 
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return  Container(
+    return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
           image: AssetImage('assets/images/log.jpeg'),

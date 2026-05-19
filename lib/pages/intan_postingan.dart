@@ -10,9 +10,6 @@ class IntanPostingan extends StatefulWidget {
 class _IntanPostinganState extends State<IntanPostingan> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-
-    );
-
+    return const Placeholder();
   }
 }

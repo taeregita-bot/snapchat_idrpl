@@ -35,7 +35,7 @@ class _IntanDashboardState extends State<IntanDashboard> {
         },
         items: pages2.entries.map((r) {
           return BottomNavigationBarItem(
-            backgroundColor: Colors.white30,
+            backgroundColor: Colors.brown.shade700,
             icon: Icon(r.value[2], color: Colors.grey, size: 32),
             label: r.value[1],
             activeIcon: Icon(r.value[2], color: Colors.orange, size: 42),

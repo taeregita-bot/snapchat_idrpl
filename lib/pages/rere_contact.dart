@@ -13,7 +13,7 @@ class _RereContactState extends State<RereContact> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          flexibleSpace: Container(
+        flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(colors: [Colors.orange]),
           ),
@@ -25,8 +25,11 @@ class _RereContactState extends State<RereContact> {
       ),
       body: ListView.builder(
         itemCount: con.length,
-        itemBuilder: (context, i) =>
-            ListTile(leading: Icon(Icons.person), title: Text(con[i].tittle)),
+        itemBuilder: (context, i) => ListTile(
+          leading: Icon(Icons.person_add_alt_rounded),
+          subtitle: Text(con[i].subttile),
+          title: Text(con[i].subttile),
+        ),
       ),
     );
   }

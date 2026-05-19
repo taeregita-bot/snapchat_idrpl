@@ -10,6 +10,6 @@ class IntanProfile extends StatefulWidget {
 class _IntanProfileState extends State<IntanProfile> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold();
   }
 }

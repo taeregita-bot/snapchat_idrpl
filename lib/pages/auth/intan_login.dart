@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:snapchat_idrpl/pages/rere_register.dart';
 
@@ -35,7 +34,7 @@ class _IntanLoginState extends State<IntanLogin> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.orange.shade700,
       body: Container(
         width: size.width,
         height: size.height,
@@ -74,7 +73,7 @@ class _IntanLoginState extends State<IntanLogin> {
                   ],
                 ),
                 SizedBox(width: 20),
-                Icon(Icons.edgesensor_high, size: 50, color: Colors.orange),
+                Icon(Icons.edgesensor_high, size: 50, color: Colors.orange.shade700),
               ],
             ),
             SizedBox(height: 50),

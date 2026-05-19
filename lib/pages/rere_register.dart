@@ -23,7 +23,8 @@ class _RereRegisterState extends State<RereRegister> {
     } else {
       _isObscure = true;
       _isObscureIcon = Icons.remove_red_eye;
-    };
+    }
+    ;
     debugPrint(_isObscure.toString());
   }
 
@@ -32,7 +33,7 @@ class _RereRegisterState extends State<RereRegister> {
     var size = MediaQuery.of(context).size;
 
     return Scaffold(
-      backgroundColor: Colors.orange,
+      backgroundColor: Colors.orange.shade700,
       body: Container(
         width: size.width,
         height: size.height,

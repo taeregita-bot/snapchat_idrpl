@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat_idrpl/pages/rere_isichat.dart';
 import 'package:snapchat_idrpl/services/rerechat_service.dart';
+import 'package:snapchat_idrpl/services/rereisichat_service.dart';
 
 class RereChat extends StatefulWidget {
   const RereChat({super.key});
@@ -11,8 +13,9 @@ class RereChat extends StatefulWidget {
 class _RereChatState extends State<RereChat> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      drawer: Drawer(
+      endDrawer: Drawer(
         child: ListView(
           children: [
             Row(
@@ -29,17 +32,105 @@ class _RereChatState extends State<RereChat> {
         ),
       ),
       appBar: AppBar(
-        title: Text("RIChat", style: TextStyle(color: Colors.orange)),
+        title: Text("RIChat", style: TextStyle(color: Colors.white)),
         flexibleSpace: Container(
           decoration: BoxDecoration(
-            gradient: LinearGradient(colors: [Colors.white, Colors.white]),
+            gradient: LinearGradient(
+              colors: [Colors.orange.shade700, Colors.orange.shade700],
+            ),
           ),
         ),
       ),
-      body: ListView.builder(
-        itemCount: ca.length,
-        itemBuilder: (context, i) =>
-            ListTile(leading: Icon(Icons.person), title: Text(ca[i].tittle)),
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: SingleChildScrollView(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 10),
+              SizedBox(
+                width: double.infinity,
+                height: 5,
+                child: PageView(children: []),
+              ),
+              SizedBox(
+                width: size.width - 40,
+                height: 600,
+                child: ListView.builder(
+                  itemCount: 4,
+                  scrollDirection: Axis.vertical,
+                  itemBuilder: (context, i) => GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RereIsichat(
+                            imag: isi[i].imag,
+                            tittle: isi[i].tittle,
+                          ),
+                        ),
+                      );
+                    },
+                    child: Card(
+                      elevation: 4,
+                      child: Container(
+                        width: 270,
+                        height: 60,
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            ClipOval(
+                              child: Image.asset(
+                                ca[i].imag,
+                                width: 35,
+                                height: 35,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 400,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    ca[i].tittle,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 400,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          ca[i].subttile,
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
