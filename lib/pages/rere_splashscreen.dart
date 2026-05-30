@@ -29,7 +29,7 @@ class _RereSplashscreenState extends State<RereSplashscreen> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/log.jpeg'),
+          image: AssetImage('assets/images/ri.jpeg'),
           fit: BoxFit.cover,
         ),
       ),

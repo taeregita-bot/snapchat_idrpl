@@ -3,6 +3,8 @@ import 'package:snapchat_idrpl/pages/rere_isichat.dart';
 import 'package:snapchat_idrpl/services/rerechat_service.dart';
 import 'package:snapchat_idrpl/services/rereisichat_service.dart';
 
+import '../services/rerecontact_service.dart';
+
 class RereChat extends StatefulWidget {
   const RereChat({super.key});
 
@@ -36,7 +38,7 @@ class _RereChatState extends State<RereChat> {
         flexibleSpace: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.orange.shade700, Colors.orange.shade700],
+              colors: [Colors.blue.shade200, Colors.blue.shade200],
             ),
           ),
         ),
@@ -76,51 +78,55 @@ class _RereChatState extends State<RereChat> {
                     child: Card(
                       elevation: 4,
                       child: Container(
-                        width: 270,
                         height: 60,
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            ClipOval(
-                              child: Image.asset(
-                                ca[i].imag,
-                                width: 35,
-                                height: 35,
-                                fit: BoxFit.fill,
-                              ),
-                            ),
-                            SizedBox(
-                              width: 400,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    ca[i].tittle,
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                    ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ClipOval(
+                                  child: Image.asset(
+                                    ca[i].imag,
+                                    width: 35,
+                                    height: 35,
+                                    fit: BoxFit.fill,
                                   ),
-                                  SizedBox(
-                                    width: 400,
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          ca[i].subttile,
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 15,
-                                          ),
+                                ),
+                                SizedBox(width: 5,),
+                                SizedBox(
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        ca[i].tittle,
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
                                         ),
-                                      ],
-                                    ),
+                                      ),
+                                      SizedBox(
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              ca[i].subttile,
+                                              style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 15,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
+                            Icon(Icons.check)
                           ],
                         ),
                       ),

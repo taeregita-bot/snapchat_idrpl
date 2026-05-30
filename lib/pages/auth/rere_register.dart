@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:snapchat_idrpl/pages/auth/rere_register.dart';
+import 'package:snapchat_idrpl/pages/intan_dashboard.dart';
+import 'package:snapchat_idrpl/pages/rere_chat.dart';
 
-class IntanLogin extends StatefulWidget {
-  const IntanLogin ({super.key});
+class RereRegister extends StatefulWidget {
+  const RereRegister ({super.key});
 
   @override
-  State<IntanLogin> createState() => _IntanLoginState();
+  State<RereRegister> createState() => _RereRegiterState();
 }
 
-class _IntanLoginState extends State<IntanLogin> {
+class _RereRegiterState extends State<RereRegister> {
   TextEditingController _password = TextEditingController();
   TextEditingController _username = TextEditingController();
 
@@ -30,8 +31,9 @@ class _IntanLoginState extends State<IntanLogin> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.shade300,
       body: Container(
         width: size.width,
         height: size.height,
@@ -39,7 +41,7 @@ class _IntanLoginState extends State<IntanLogin> {
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.blue.shade300,
+            color: Colors.white,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Column(
@@ -52,7 +54,7 @@ class _IntanLoginState extends State<IntanLogin> {
                   Text(
                     'RIChat',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.grey,
                       fontSize: 50,
                       fontWeight: FontWeight.normal,
                       shadows: [
@@ -86,7 +88,7 @@ class _IntanLoginState extends State<IntanLogin> {
                 controller: _username,
                 keyboardType: TextInputType.text,
                 decoration: InputDecoration(
-                  hintText: "Username",
+                  hintText: "Nomer",
                   alignLabelWithHint: true,
                   focusColor: Colors.red,
                   fillColor: Colors.white,
@@ -131,8 +133,9 @@ class _IntanLoginState extends State<IntanLogin> {
                       });
                     },
                   ),
-        ],
-        ),
+                  Text('Anda Yakin?', style: TextStyle(color: Colors.grey.shade700)),
+                ],
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
@@ -165,11 +168,11 @@ class _IntanLoginState extends State<IntanLogin> {
                 child: TextButton(
                   onPressed: () => Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RereRegister()),
+                    MaterialPageRoute(builder: (context) => IntanDashboard()),
                   ),
                   child: Text(
                     'Login',
-                    style: TextStyle(fontSize: 15, color: Colors.grey.shade700),
+                    style: TextStyle(fontSize: 15, color: Colors.grey),
                   ),
                 ),
               ),
