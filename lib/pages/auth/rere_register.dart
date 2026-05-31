@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat_idrpl/pages/intan_dashboard.dart';
-import 'package:snapchat_idrpl/pages/rere_chat.dart';
 
 class RereRegister extends StatefulWidget {
-  const RereRegister ({super.key});
+  const RereRegister({super.key});
 
   @override
-  State<RereRegister> createState() => _RereRegiterState();
+  State<RereRegister> createState() => _RereRegisterState();
 }
 
-class _RereRegiterState extends State<RereRegister> {
+class _RereRegisterState extends State<RereRegister> {
   TextEditingController _password = TextEditingController();
   TextEditingController _username = TextEditingController();
 
@@ -31,17 +30,21 @@ class _RereRegiterState extends State<RereRegister> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
     return Scaffold(
-      backgroundColor: Colors.blue.shade300,
       body: Container(
         width: size.width,
         height: size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/k.jpeg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         padding: const EdgeInsets.all(50),
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Colors.white70,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Column(
@@ -133,7 +136,6 @@ class _RereRegiterState extends State<RereRegister> {
                       });
                     },
                   ),
-                  Text('Anda Yakin?', style: TextStyle(color: Colors.grey.shade700)),
                 ],
               ),
               SizedBox(height: 20),
@@ -172,7 +174,7 @@ class _RereRegiterState extends State<RereRegister> {
                   ),
                   child: Text(
                     'Login',
-                    style: TextStyle(fontSize: 15, color: Colors.grey),
+                    style: TextStyle(fontSize: 15, color: Colors.grey.shade700),
                   ),
                 ),
               ),

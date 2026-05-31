@@ -75,7 +75,7 @@ class _IntanPostinganState extends State<IntanPostingan> {
                         ],
                       ),
                       SizedBox(
-                        height: 180,
+                        height: 140,
                         child: ListView.builder(
                           scrollDirection: Axis.vertical,
                           itemCount: favorite.length,
@@ -85,15 +85,15 @@ class _IntanPostinganState extends State<IntanPostingan> {
                               elevation: 3,
                               child: Container(
                                 width: size.width - 150,
-                                height: 100,
+                                height: 120,
                                 padding: const EdgeInsets.all(8),
                                 child: Row(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Image.asset(
                                       favorite[i].imageURL,
-                                      width: 100,
-                                      height: 100,
+                                      width: 80,
+                                      height: 80,
                                     ),
                                     SizedBox(width: 8),
                                     Expanded(

@@ -3,7 +3,6 @@ import 'package:snapchat_idrpl/pages/rere_isichat.dart';
 import 'package:snapchat_idrpl/services/rerechat_service.dart';
 import 'package:snapchat_idrpl/services/rereisichat_service.dart';
 
-import '../services/rerecontact_service.dart';
 
 class RereChat extends StatefulWidget {
   const RereChat({super.key});
@@ -23,13 +22,51 @@ class _RereChatState extends State<RereChat> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Icon(Icons.arrow_back),
+                IconButton(onPressed: () {
+                  Navigator.pop(context);
+                },
+                    icon: Icon(Icons.arrow_back)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [Text("Pengaturan")],
+
                 ),
               ],
             ),
+            SizedBox(height: 65),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.bookmark)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text("Pesan Tersimpan")],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [Text("Peraturan")],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.abc)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("Bahasa"),
+                  ],
+                )
+              ],
+
+            )
           ],
         ),
       ),
@@ -94,10 +131,11 @@ class _RereChatState extends State<RereChat> {
                                     fit: BoxFit.fill,
                                   ),
                                 ),
-                                SizedBox(width: 5,),
+                                SizedBox(width: 5),
                                 SizedBox(
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         ca[i].tittle,
@@ -126,7 +164,7 @@ class _RereChatState extends State<RereChat> {
                                 ),
                               ],
                             ),
-                            Icon(Icons.check)
+                            Icon(Icons.check),
                           ],
                         ),
                       ),

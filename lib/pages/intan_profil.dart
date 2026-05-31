@@ -26,8 +26,8 @@ class _IntanProfilState extends State<IntanProfil> {
         height: double.infinity,
         width: double.infinity,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ClipRRect(
                borderRadius: BorderRadius.circular(80),

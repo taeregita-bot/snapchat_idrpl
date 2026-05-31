@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:snapchat_idrpl/pages/rere_isichat.dart';
-import 'package:snapchat_idrpl/services/rerechat_service.dart';
-import 'package:snapchat_idrpl/services/rereisichat_service.dart';
+import 'package:snapchat_idrpl/services/rereisicon_service.dart';
 
 import '../services/rerecontact_service.dart';
 
@@ -53,8 +52,8 @@ class _RereContactState extends State<RereContact> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => RereIsichat(
-                            imag: isi[i].imag,
-                            tittle: isi[i].tittle,
+                            imag: sico[i].imag,
+                            tittle: sico[i].no,
                           ),
                         ),
                       );

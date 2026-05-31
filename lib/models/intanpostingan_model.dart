@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 class IntanpostinganModel {
   final String imageURL;
   final String tittle;

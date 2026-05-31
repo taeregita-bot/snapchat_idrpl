@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:snapchat_idrpl/pages/auth/rere_register.dart';
 
 class IntanLogin extends StatefulWidget {
-  const IntanLogin ({super.key});
+  const IntanLogin({super.key});
 
   @override
   State<IntanLogin> createState() => _IntanLoginState();
@@ -31,15 +31,20 @@ class _IntanLoginState extends State<IntanLogin> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Container(
         width: size.width,
         height: size.height,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/k.jpeg"),
+            fit: BoxFit.cover,
+          ),
+        ),
         padding: const EdgeInsets.all(50),
         child: Container(
           padding: const EdgeInsets.all(20),
           decoration: BoxDecoration(
-            color: Colors.blue.shade300,
+            color: Colors.white70,
             borderRadius: BorderRadius.circular(30),
           ),
           child: Column(
@@ -52,7 +57,7 @@ class _IntanLoginState extends State<IntanLogin> {
                   Text(
                     'RIChat',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.grey,
                       fontSize: 50,
                       fontWeight: FontWeight.normal,
                       shadows: [
@@ -131,8 +136,8 @@ class _IntanLoginState extends State<IntanLogin> {
                       });
                     },
                   ),
-        ],
-        ),
+                ],
+              ),
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
