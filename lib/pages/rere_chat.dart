@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat_idrpl/pages/pesantersimpan_rere.dart';
 import 'package:snapchat_idrpl/pages/rere_isichat.dart';
 import 'package:snapchat_idrpl/services/rerechat_service.dart';
 import 'package:snapchat_idrpl/services/rereisichat_service.dart';
-
 
 class RereChat extends StatefulWidget {
   const RereChat({super.key});
@@ -22,14 +22,15 @@ class _RereChatState extends State<RereChat> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                IconButton(onPressed: () {
-                  Navigator.pop(context);
-                },
-                    icon: Icon(Icons.arrow_back)),
+                IconButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(Icons.arrow_back),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [Text("Pengaturan")],
-
                 ),
               ],
             ),
@@ -37,9 +38,19 @@ class _RereChatState extends State<RereChat> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.bookmark)),
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PesantersimpanRere(),
+                      ),
+                    );
+                  },
+                  icon: Icon(Icons.bookmark),
+                ),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [Text("Pesan Tersimpan")],
                 ),
               ],
@@ -60,13 +71,10 @@ class _RereChatState extends State<RereChat> {
                 IconButton(onPressed: () {}, icon: Icon(Icons.abc)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text("Bahasa"),
-                  ],
-                )
+                  children: [Text("Bahasa")],
+                ),
               ],
-
-            )
+            ),
           ],
         ),
       ),
