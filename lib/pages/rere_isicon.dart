@@ -18,7 +18,6 @@ class _RereIsiconState extends State<RereIsicon> {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            ClipOval(child: Image.asset(widget.imag, width: 40, height: 40)),
             SizedBox(width: 5),
             Text(
               widget.no,

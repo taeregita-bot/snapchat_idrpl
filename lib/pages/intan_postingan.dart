@@ -91,7 +91,7 @@ class _IntanPostinganState extends State<IntanPostingan> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Image.asset(
-                                      favorite[i].imageURL,
+                                      favorite[i].image,
                                       width: 80,
                                       height: 80,
                                     ),
@@ -101,36 +101,14 @@ class _IntanPostinganState extends State<IntanPostingan> {
                                         crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            favorite[i].imageURL,
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          SizedBox(height: 5),
-                                          Text(
-                                            favorite[i].tittle.toString(),
-                                            style: TextStyle(
-                                              color: Colors.orange,
-                                            ),
-                                          ),
+                                        Text(
+                                          favorite[i].tittle.toString(),
+                                        ),
                                           SizedBox(height: 5),
                                           Row(
-                                            mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
-                                              Row(
-                                                children: [
-                                                  Text(
-                                                    favorite[i].favorite
-                                                        .toString(),
-                                                    style: TextStyle(
-                                                      color: Colors.orange,
-                                                    ),
-                                                  ),
-                                                ],
-                                              ),
-
                                               IconButton(
                                                 icon: Icon(
                                                   Icons.favorite,
@@ -140,7 +118,6 @@ class _IntanPostinganState extends State<IntanPostingan> {
                                                   setState(() {
                                                     final item = favorite
                                                         .removeAt(i);
-                                                    item.favorite = false;
                                                     nonfavorite.add(item);
                                                   });
                                                 },
@@ -174,14 +151,13 @@ class _IntanPostinganState extends State<IntanPostingan> {
                     scrollDirection: Axis.vertical,
                     itemBuilder: (context, index) {
                       return IntanpostinganWidget(
-                        imageURL: nonfavorite[index].imageURL,
+                        imageURL: nonfavorite[index].image,
                         tittle: nonfavorite[index].tittle.toString(),
                         width: size.width / 2 - 15,
                         height: 100,
                         pro: () {
                           setState(() {
                             final item = nonfavorite.removeAt(index);
-                            item.favorite = true;
                             favorite.add(item);
                           });
                         },

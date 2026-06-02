@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:snapchat_idrpl/pages/intan_bahasa.dart';
+import 'package:snapchat_idrpl/pages/intan_peraturan.dart';
+import 'package:snapchat_idrpl/pages/intan_pesantersimpan.dart';
 import 'package:snapchat_idrpl/pages/rere_isichat.dart';
 import 'package:snapchat_idrpl/services/rerechat_service.dart';
 import 'package:snapchat_idrpl/services/rereisichat_service.dart';
@@ -29,7 +32,6 @@ class _RereChatState extends State<RereChat> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [Text("Pengaturan")],
-
                 ),
               ],
             ),
@@ -37,17 +39,28 @@ class _RereChatState extends State<RereChat> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.bookmark)),
+                IconButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context, MaterialPageRoute(
+                          builder: (context) => IntanPesantersimpan(),));
+                    },
+                    icon: Icon(Icons.bookmark)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [Text("Pesan Tersimpan")],
+                  children: [Text("Pesan Tersimpan"),
+                  ],
                 ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
+                IconButton(onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                    builder: (context) => IntanPeraturan(),));
+                }, icon: Icon(Icons.settings)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [Text("Peraturan")],
@@ -57,7 +70,11 @@ class _RereChatState extends State<RereChat> {
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.abc)),
+                IconButton(onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(
+                    builder: (context) => IntanBahasa(),));
+                }, icon: Icon(Icons.abc)),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

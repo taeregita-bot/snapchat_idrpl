@@ -25,7 +25,6 @@ class _IntanpostinganWidgetState extends State<IntanpostinganWidget> {
         width: size.width,
         height: size.height,
         padding: EdgeInsets.all(10),
-
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
@@ -39,8 +38,7 @@ class _IntanpostinganWidgetState extends State<IntanpostinganWidget> {
           ],
         ),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
               borderRadius: BorderRadiusGeometry.circular(10),
@@ -52,10 +50,6 @@ class _IntanpostinganWidgetState extends State<IntanpostinganWidget> {
               ),
             ),
             SizedBox(height: 10),
-            Text(
-              widget.imageURL,
-              style: TextStyle(fontWeight: FontWeight.bold),
-            ),
             Row(
               children: [
                 Card(
